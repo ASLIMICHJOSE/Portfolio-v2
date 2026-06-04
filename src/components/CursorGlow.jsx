@@ -51,7 +51,7 @@ export default function CursorGlow() {
   useEffect(() => {
     const handleMouseOver = (e) => {
       const target = e.target;
-      if (!target) return;
+      if (!target || typeof target.closest !== 'function') return;
 
       // Identify if elements are interactive or have data attributes
       const isInteractive = target.closest(
@@ -80,7 +80,7 @@ export default function CursorGlow() {
 
     const handleMouseOut = (e) => {
       const target = e.target;
-      if (!target) return;
+      if (!target || typeof target.closest !== 'function') return;
 
       const isInteractive = target.closest(
         'a, button, [role="button"], input, textarea, select, .tilt-card, [data-interactive]'
