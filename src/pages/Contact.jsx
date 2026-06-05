@@ -113,6 +113,7 @@ export default function Contact() {
     if (!form.name || !form.email || !form.message) return;
     setStatus('sending');
 
+    // Fetch EmailJS keys from Vite environment variables (requires server restart locally, or GitHub Secrets on production build)
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
