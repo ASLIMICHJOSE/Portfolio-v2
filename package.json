@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
     "framer-motion": "^12.40.0",
     "react": "^19.2.6",

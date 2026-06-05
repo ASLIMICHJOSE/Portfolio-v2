@@ -29,15 +29,19 @@ export const projects = [
     type: "AI / Computer Vision",
     status: "Completed",
     highlight: true,
+    github: "https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement",
+    image: "/projects/object-detection.png"
   },
   {
     id: 5,
-    title: "SeroFast — Syphilis Serological State Predictor",
-    description: "A machine learning clinical diagnostic platform that predicts syphilis serofast states. Features patient demographic models, serum titer tracking, and responsive charts.",
-    stack: ["Python", "TensorFlow", "Scikit-Learn", "React", "FastAPI"],
-    type: "AI & Healthcare",
+    title: "SeroFast — Medical E-Commerce & Diagnostic Platform",
+    description: "Full-stack medical e-commerce marketplace & clinical predictor. Features geolocation APIs (reverse-geocoding coordinates via Nominatim), auto-complete search against Supabase products/shops, dynamic cart delivery estimates, and secure RLS-configured vendor dashboards with two-way reviews.",
+    stack: ["React", "Supabase", "Tailwind CSS", "PostgreSQL", "FastAPI", "TensorFlow"],
+    type: "Full-Stack Web App / AI",
     status: "Completed",
     highlight: true,
+    github: "https://github.com/ASLIMICHJOSE/SeroFast",
+    image: "/projects/serofast.png"
   },
   {
     id: 2,
@@ -47,6 +51,8 @@ export const projects = [
     type: "Front-End",
     status: "In Development",
     highlight: false,
+    github: "https://github.com/ASLIMICHJOSE/Zyraa",
+    image: "/projects/zyraa.png"
   },
   {
     id: 3,
@@ -56,6 +62,8 @@ export const projects = [
     type: "AI Web App",
     status: "Completed",
     highlight: false,
+    github: "https://github.com/ASLIMICHJOSE/AI-Career-Guidance-System",
+    image: "/projects/career-guidance.png"
   },
   {
     id: 4,
@@ -65,6 +73,8 @@ export const projects = [
     type: "Front-End",
     status: "Completed",
     highlight: false,
+    github: "https://github.com/ASLIMICHJOSE/Fitness-Trainer-Website",
+    image: "/projects/fitness-trainer.png"
   },
 ];
 

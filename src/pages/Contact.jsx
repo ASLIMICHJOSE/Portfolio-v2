@@ -5,6 +5,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import { personalInfo } from '../data/portfolio';
 import { FaGithub, FaGlobe } from 'react-icons/fa';
 import PageTransition from '../components/PageTransition';
+import emailjs from '@emailjs/browser';
 
 const terminalLines = [
   {
@@ -105,16 +106,47 @@ function TerminalBlock() {
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success'
+  const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setStatus('sending');
-    setTimeout(() => {
-      setStatus('success');
-      setForm({ name: '', email: '', message: '' });
-    }, 1200);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.warn('EmailJS environment variables are missing. Simulating success...');
+      setTimeout(() => {
+        setStatus('success');
+        setForm({ name: '', email: '', message: '' });
+      }, 1200);
+      return;
+    }
+
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      message: form.message,
+      to_name: personalInfo.name,
+      reply_to: form.email,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then(
+        (response) => {
+          console.log('EmailJS Success:', response.status, response.text);
+          setStatus('success');
+          setForm({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          console.error('EmailJS Error:', error);
+          setStatus('error');
+        }
+      );
   };
 
   return (
@@ -167,6 +199,18 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {status === 'error' && (
+                    <div
+                      className="font-mono text-xs px-4 py-2 rounded border"
+                      style={{
+                        backgroundColor: 'rgba(239,68,68,0.05)',
+                        borderColor: 'rgba(239,68,68,0.3)',
+                        color: '#ef4444',
+                      }}
+                    >
+                      [ ERROR ] Transmission failed. Please try again.
+                    </div>
+                  )}
                   {/* Name */}
                   <div>
                     <input
