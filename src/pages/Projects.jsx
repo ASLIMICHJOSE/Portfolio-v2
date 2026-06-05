@@ -90,7 +90,7 @@ export default function Projects() {
                 {project.image && (
                   <div className="relative w-full h-48 sm:h-52 overflow-hidden border-b border-cyber-border/20">
                     <img
-                      src={project.image}
+                      src={`${import.meta.env.BASE_URL}${project.image.startsWith('/') ? project.image.slice(1) : project.image}`}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
