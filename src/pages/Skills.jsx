@@ -12,7 +12,7 @@ const categories = [
   { key: 'other', label: 'Other', icon: FaCubes },
 ];
 
-const learningItems = 'Advanced React · State Management · Backend Integration · TensorFlow';
+const learningItems = 'Cloud Architectures · Advanced React · DevOps Basics · TensorFlow';
 
 export default function Skills() {
   return (

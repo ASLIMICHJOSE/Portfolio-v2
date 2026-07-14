@@ -13,16 +13,18 @@ import cert2 from '../certificate/CertificateOfCompletion_Data Cleaning in Pytho
 import cert3 from '../certificate/CertificateOfCompletion_Introduction to Career Skills in Software Development (1).pdf';
 import cert4 from '../certificate/CertificateOfCompletion_Introduction to Data Science.pdf';
 import cert5 from '../certificate/CertificateOfCompletion_Learning Data Analytics 1 Foundations.pdf';
+import cert6 from '../certificate/Microsoft_Certified_Azure_Fundamentals.pdf';
 
 const certFiles = {
   1: cert1,
   2: cert2,
   3: cert3,
   4: cert4,
-  5: cert5
+  5: cert5,
+  6: cert6
 };
 
-const categories = ['All', 'Software Development', 'Data Science & Analytics'];
+const categories = ['All', 'Software Development', 'Cloud Computing', 'Data Science & Analytics'];
 
 export default function Certificates() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -32,6 +34,7 @@ export default function Certificates() {
     const matchesCategory =
       activeCategory === 'All' ||
       (activeCategory === 'Software Development' && cert.category.toLowerCase().includes('development')) ||
+      (activeCategory === 'Cloud Computing' && cert.category.toLowerCase().includes('cloud')) ||
       (activeCategory === 'Data Science & Analytics' &&
         (cert.category.toLowerCase().includes('data') || cert.category.toLowerCase().includes('python')));
 
