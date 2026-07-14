@@ -122,14 +122,14 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        {/* Three stat pills */}
+        {/* Four stat pills */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="flex flex-wrap gap-3 justify-center"
         >
-          {['React Dev', 'AI Builder', 'CS Student'].map((label) => (
+          {['React Dev', 'AI Builder', 'Azure Certified', 'CS Student'].map((label) => (
             <div
               key={label}
               className="flex items-center gap-2 px-4 py-1.5 rounded-full border font-mono text-xs tracking-wider"
