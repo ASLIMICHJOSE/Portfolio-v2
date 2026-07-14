@@ -3,6 +3,7 @@ export const personalInfo = {
   role: "Front-End Developer",
   taglines: [
     "Building the web, one component at a time.",
+    "Deploying scalable cloud solutions on Azure.",
     "Training AI to see the real world.",
     "React. Tailwind. Ship it.",
   ],
@@ -16,8 +17,8 @@ export const personalInfo = {
 export const skills = {
   frontend: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Responsive Design", "API Integration"],
   ai: ["Python", "OpenCV", "YOLOv8", "TensorFlow", "Object Detection"],
-  tools: ["Git", "GitHub", "GitHub Pages", "Vite", "VS Code"],
-  other: ["Java", "React Native", "Flutter/Dart"],
+  tools: ["Git", "GitHub", "Microsoft Azure", "GitHub Pages", "Vite", "VS Code"],
+  other: ["Cloud Computing", "Java", "React Native", "Flutter/Dart"],
 };
 
 export const projects = [
@@ -110,6 +111,14 @@ export const experience = {
 };
 
 export const certifications = [
+  {
+    id: 6,
+    title: "Microsoft Certified: Azure Fundamentals",
+    issuer: "Microsoft",
+    fileName: "Microsoft_Certified_Azure_Fundamentals.pdf",
+    category: "Cloud Computing",
+    date: "2026",
+  },
   {
     id: 1,
     title: "Career Essentials in Software Development",
