@@ -4,10 +4,11 @@ import { FaRobot, FaTimes, FaTerminal, FaPaperPlane } from 'react-icons/fa';
 
 const BOT_DATABASE = {
   about: "Asli Mich Jose J is an aspiring Computer Science student at Stella Mary's College of Engineering and an active Front-End Developer Intern at Iniram Square. He builds robust, modern web interfaces and trains computer vision models.",
-  skills: "Asli's technology stack includes:\n- Frontend: HTML5, CSS3, JavaScript, React, Tailwind CSS, Vite\n- AI / Computer Vision: Python, OpenCV, YOLOv8, TensorFlow\n- Mobile: React Native, Flutter/Dart\n- Tools: Git, GitHub Pages, VS Code",
+  skills: "Asli's technology stack includes:\n- Frontend: HTML5, CSS3, JavaScript, React, Tailwind CSS, Vite\n- Cloud: Microsoft Azure (Azure Fundamentals Certified)\n- AI / Computer Vision: Python, OpenCV, YOLOv8, TensorFlow\n- Mobile: React Native, Flutter/Dart\n- Tools: Git, GitHub Pages, VS Code",
+  azure: "Asli completed the Microsoft Certified: Azure Fundamentals certification on July 11, 2026. This verifies his foundational knowledge of cloud services, security, privacy, compliance, and core Azure pricing and support models.",
   serofast: "SeroFast is Asli's clinical predictive diagnostic project. It utilizes machine learning (TensorFlow / Scikit-Learn) and a FastAPI backend to predict whether syphilis patients will reach a 'serofast state' after treatment based on RPR titers.",
   contact: "You can transmit messages directly to Asli via:\n- Email: aslimich22@gmail.com\n- Phone: +91 8903252575\n- Location: KK District, Tamil Nadu\n- GitHub: https://github.com/aslimichjose",
-  help: "AVAILABLE COMMANDS:\n> help.sh - Displays list of system commands\n> about.py - General information\n> skills.java - Programming capabilities\n> serofast.c - Biomedical diagnostic tool info\n> contact.sh - Developer location & email",
+  help: "AVAILABLE COMMANDS:\n> help.sh - Displays list of system commands\n> about.py - General information\n> skills.java - Programming capabilities\n> azure.sh - Cloud certifications & knowledge\n> serofast.c - Biomedical diagnostic tool info\n> contact.sh - Developer location & email",
 };
 
 export default function ChatbotWidget() {
@@ -52,6 +53,8 @@ export default function ChatbotWidget() {
       matchedKey = 'about';
     } else if (cleanText.includes('skill') || cleanText.includes('lang') || cleanText.includes('stack')) {
       matchedKey = 'skills';
+    } else if (cleanText.includes('azure') || cleanText.includes('cloud') || cleanText.includes('cert')) {
+      matchedKey = 'azure';
     } else if (cleanText.includes('serofast') || cleanText.includes('sero') || cleanText.includes('syphilis')) {
       matchedKey = 'serofast';
     } else if (cleanText.includes('contact') || cleanText.includes('email') || cleanText.includes('phone') || cleanText.includes('reach')) {
@@ -156,6 +159,12 @@ export default function ChatbotWidget() {
                 className="px-2 py-1 rounded border border-cyber-border text-[9px] font-mono text-slate-400 hover:text-cyber-green hover:border-cyber-green transition-all"
               >
                 skills.java
+              </button>
+              <button
+                onClick={() => handleSend("azure.sh")}
+                className="px-2 py-1 rounded border border-cyber-border text-[9px] font-mono text-slate-400 hover:text-cyber-green hover:border-cyber-green transition-all"
+              >
+                azure.sh
               </button>
               <button
                 onClick={() => handleSend("serofast.c")}
